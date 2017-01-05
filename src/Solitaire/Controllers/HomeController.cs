@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Solitaire.Models;
 
 namespace Solitaire.Controllers
 {
@@ -13,16 +14,20 @@ namespace Solitaire.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Deck()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            List<Card> cards = new List<Card>();
+            for (int i = 1; i < 53; i++)
+            {
+                Card newCard = new Card(i);
+                cards.Add(newCard);
+            }
+            return View(cards);
         }
 
-        public IActionResult Contact()
+        public IActionResult Stats()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "View Game Statistics";
 
             return View();
         }

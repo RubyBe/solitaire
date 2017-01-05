@@ -14,6 +14,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
+    <ApplicationInsightsResourceId>/subscriptions/2e6cc54a-e01e-4b0e-afb7-e0eda72a7d78/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/Solitaire</ApplicationInsightsResourceId>
   </PropertyGroup>
   <ItemGroup>
     <DnxInvisibleContent Include="bower.json" />

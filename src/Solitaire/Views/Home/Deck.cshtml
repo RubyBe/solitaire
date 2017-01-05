@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Solitaire.Models.Card>
+
+    @{
+        ViewData["Title"] = "Index";
+    }
+
+        <h2>Index</h2>
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.card)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.cardImage)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.rank)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.rankName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.suit)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.suitName)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.card)
+                        </td>
+                        <td>
+                            <img src="~/images/cards/@(item.cardImage)" height="65" width="45" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.rank)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.rankName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.suit)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.suitName)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
