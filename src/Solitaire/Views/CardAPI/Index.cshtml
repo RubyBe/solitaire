@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "API Index";
+}
+<h2>Solitaire Game</h2>
+<div class="row">
+    <div class="col-md-6">
+        <div ng-controller="APIDeckController">
+            <h1>Deck Controller Here</h1>
+            <h2>Current Deck (From CardsAPI)</h2>
+            <h4>Cards remaining: {{deck.remaining}}</h4>
+            <h4>Deck returned: {{deck.success}}</h4>
+            <h4>Deck Id: {{deck.deck_id}}</h4>
+            <h4>Deck is shuffled: {{deck.shuffled}}</h4>
+            <h2>Test of cardAPIController</h2>
+            {{dealMessage}}
+        </div>
+        <hr />
+        <div ng-controller="APIDrawController">
+            <h1>Draw Controller Here</h1>
+            <h2>Card Returned From Deck</h2>
+            <h4>Cards remaining: {{draw.remaining}}</h4>
+            <h4>Deck returned: {{draw.success}}</h4>
+            <h4>Deck Id: {{draw.deck_id}}</h4>
+            <hr />
+            <select ng-model="cardSortValue">
+                <option value="+value">Order by Rank</option>
+                <option value="+suit">Order by Suit</option>
+            </select>
+            <table id="cardsList">
+                <tbody>
+                    <tr ng-repeat="card in draw.cards | orderBy:cardSortValue">
+                        <td width="100"><img src={{card.image}} height="60" width="45"/></td>
+                        <td width="200">{{card.value}} of  {{card.suit}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h1>Column TBD</h1>
+    </div>
+</div>
+
+
+
+
